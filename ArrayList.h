@@ -18,5 +18,7 @@ public:
     void remove(int index);
     int search(int data);
     void print();
+    // test czy dziala pushowanie kodu 
+    
 };
 
