@@ -118,6 +118,9 @@ void  ArrayList::print() {
     cout << endl;
 }
 
+void ArrayList::load_file() {};
+
+
 int ArrayList::get_size() {
     return size;
 }

@@ -59,7 +59,7 @@ using namespace std;
             head = nullptr;
             tail = nullptr;
             size--;
-
+            return;
         }
 
         Node* current = head;
@@ -69,32 +69,34 @@ using namespace std;
 
     }
 
+
     void Linked_list_ht::remove_back() {
 
-        if (!head) {
-            cout << "List is empty" << endl;
-            return;
-        }
-
-        if (head == tail) {
-            delete head;
-            head = nullptr;
-            tail = nullptr;
-            size--;
-
-        }
-
-        Node* current = head;
-
-        while (current->next != tail) {
-            current = current->next;
-        }
-        delete tail;
-        tail = current;
-        tail->next = nullptr;
-        size--;
-
+    if (!head) {
+        cout << "List is empty" << endl;
+        return;
     }
+
+    if (head == tail) {
+        delete head;
+        head = nullptr;
+        tail = nullptr;
+        size--;
+        return;  // Dodajemy return tutaj
+    }
+
+    Node* current = head;
+
+    while (current->next != tail) {
+        current = current->next;
+    }
+    delete tail;
+    tail = current;
+    tail->next = nullptr;
+    size--;
+
+}
+
 
     int Linked_list_ht::search(int value) {
 

@@ -130,14 +130,14 @@ void DoublyLinkedList::remove(int index) {
         }
     }
 
-    if (temp->prev != nullptr) {
+    if (temp->prev != head->prev) {
         temp->prev->next = temp->next;
     }
     else {
         head = temp->next;
     }
 
-    if (temp->next != nullptr) {
+    if (temp->next != tail->next) {
         temp->next->prev = temp->prev;
     }
     else {
@@ -147,6 +147,8 @@ void DoublyLinkedList::remove(int index) {
     delete temp;   // usuwa obiekt zadany obiekt 
     size--;
 }
+
+
 
 void DoublyLinkedList::remove_back() {
     if (size == 0) {

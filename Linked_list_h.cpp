@@ -53,11 +53,10 @@ using namespace std;
             return;
         }
         else if (!head->next) {
-
             delete head;
             head = nullptr;
             size--;
-
+            return;  
         }
 
         Node* temp = head;
@@ -69,33 +68,29 @@ using namespace std;
 
     void Linked_list_h::remove_back() {
 
-
-
-        if (!head) {
-
-            cout << "Lista nie posiada elementow" << endl;
-            return;
-
-        }
-        else if (!head->next) {
-
-            delete head;
-            head = nullptr;
-            size--;
-        }
-
-        Node* current = head;
-
-        while (current->next->next) {
-
-            current = current->next;
-        }
-
-        delete current->next;
-        current->next = nullptr;
-        size--;
-
+    if (!head) {
+        cout << "Lista nie posiada elementow" << endl;
+        return;
     }
+    else if (!head->next) {
+        delete head;
+        head = nullptr;
+        size--;
+        return;  // Dodajemy return tutaj
+    }
+
+    Node* current = head;
+
+    while (current->next->next) {
+        current = current->next;
+    }
+
+    delete current->next;
+    current->next = nullptr;
+    size--;
+
+}
+
 
     void Linked_list_h::insert(int value, int id) {
 

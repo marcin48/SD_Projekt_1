@@ -20,7 +20,8 @@ public:
     void remove_front();
     void remove(int index);
     void remove_back();
-    int search(int data);              
+    int search(int data);     
+    void load_file();
     void print();                       
     int get_size();
 
