@@ -6,7 +6,7 @@
 using namespace std;
 
 
-    void Linked_list_ht::Add_First(int value) {
+    void Linked_list_ht::insert_front(int value) {
 
         Node* newNode = new Node(value);
 
@@ -26,7 +26,7 @@ using namespace std;
 
     }
 
-    void Linked_list_ht::Add_End(int value) {
+    void Linked_list_ht::insert_back(int value) {
 
         Node* newNode = new Node(value);
 
@@ -47,7 +47,7 @@ using namespace std;
 
     }
 
-    void Linked_list_ht::Remove_First() {
+    void Linked_list_ht::remove_front() {
 
         if (!head) {
             cout << "List is empty" << endl;
@@ -69,7 +69,7 @@ using namespace std;
 
     }
 
-    void Linked_list_ht::Remove_End() {
+    void Linked_list_ht::remove_back() {
 
         if (!head) {
             cout << "List is empty" << endl;
@@ -96,24 +96,22 @@ using namespace std;
 
     }
 
-    void Linked_list_ht::Look_For(int value) {
+    int Linked_list_ht::search(int value) {
 
         Node* current = head;
 
         while (current) {
 
             if (current->data == value) {
-                cout << "Znaleziono warto??: " << current->data << endl;
-
-                return;
+                return current->data;
             }
             current = current->next;
         }
-        cout << "Brak podanego elementu" << endl;
+        return -1;
 
     }
 
-    void Linked_list_ht::Add_Random(int value, int id) {
+    void Linked_list_ht::insert(int value, int id) {
 
         Node* newNode = new Node(value);
         Node* current = head;
@@ -126,13 +124,13 @@ using namespace std;
         }
         else if (id == 1) {
 
-            Add_First(value);
+            insert_front(value);
             return;
 
         }
         else if (id == size) {
 
-            Add_End(value);
+            insert_back(value);
             return;
         }
 
@@ -147,7 +145,7 @@ using namespace std;
 
     }
 
-    void Linked_list_ht::Remove_Random(int id) {
+    void Linked_list_ht::remove(int id) {
 
         Node* behind = head;
 
@@ -165,7 +163,7 @@ using namespace std;
         }
         else if (id == 1) {
 
-            Remove_First();
+            remove_front();
             return;
 
         }
@@ -177,7 +175,7 @@ using namespace std;
         }
         else if (id == size) {
 
-            Remove_End();
+            remove_back();
             return;
         }
 
@@ -194,7 +192,7 @@ using namespace std;
 
     }
 
-    void Linked_list_ht::Show() {
+    void Linked_list_ht::print() {
 
         Node* current = head;
         while (current) {

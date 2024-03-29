@@ -1,10 +1,11 @@
 #pragma once
 #include <iostream>
 #include "Node.h"
+#include "Struktura.h"
 
 using namespace std;
 
-class Linked_list_ht {
+class Linked_list_ht : public Struktura {
 
 private:
     Node* head;
@@ -15,14 +16,14 @@ public:
     Linked_list_ht() : head(nullptr), tail(nullptr), size(0) {};
     ~Linked_list_ht() {};
 
-    void Add_First(int value);
-    void Add_End(int value);
-    void Remove_First();
-    void Remove_End();
-    void Look_For(int value);
-    void Add_Random(int value, int id);
-    void Remove_Random(int id);
-    void Show();
+    void insert_front(int value);
+    void insert_back(int value);
+    void remove_front();
+    void remove_back();
+    int search(int value);
+    void insert(int value, int id);
+    void remove(int id);
+    void print();
     int Size_of_list()const;
 
 };

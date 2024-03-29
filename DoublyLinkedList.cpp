@@ -77,7 +77,7 @@ void DoublyLinkedList::insert(int data, int index) {
     size++;
 }
 
-void DoublyLinkedList::insert_end(int data) {
+void DoublyLinkedList::insert_back(int data) {
     Node* newNode = new Node(data);
     if (head == nullptr) {
         head = newNode;
@@ -148,7 +148,7 @@ void DoublyLinkedList::remove(int index) {
     size--;
 }
 
-void DoublyLinkedList::remove_end() {
+void DoublyLinkedList::remove_back() {
     if (size == 0) {
         return;
     }

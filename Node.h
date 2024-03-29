@@ -7,6 +7,6 @@ public:
     Node* prev;
 
     Node(int data);
-    ~Node();
+    ~Node(){};
 };
 

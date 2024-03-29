@@ -1,8 +1,9 @@
 #pragma once
 #include <iostream>
+#include "Struktura.h"
 using namespace std;
 
-class ArrayList 
+class ArrayList : public Struktura
 {
 private:
     int* arr;  
@@ -18,7 +19,7 @@ public:
     void insert_back(int data);        
     void remove_front();
     void remove(int index);
-    void remove_end();
+    void remove_back();
     int search(int data);              
     void print();                       
     int get_size();

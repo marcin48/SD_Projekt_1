@@ -3,7 +3,7 @@
 #include "Node.h"
 using namespace std;
 
-    void Linked_list_h::Add_First(int value) {
+    void Linked_list_h::insert_front(int value) {
 
         Node* newNode = new Node(value);
 
@@ -22,7 +22,7 @@ using namespace std;
 
     }
 
-    void Linked_list_h::Add_End(int value) {
+    void Linked_list_h::insert_back(int value) {
 
         Node* newNode = new Node(value);
 
@@ -46,7 +46,7 @@ using namespace std;
         }
     }
 
-    void Linked_list_h::Remove_First() {
+    void Linked_list_h::remove_front() {
 
         if (!head) {
             cout << "Lista nie posiada elementow" << endl;
@@ -67,7 +67,7 @@ using namespace std;
 
     }
 
-    void Linked_list_h::Remove_End() {
+    void Linked_list_h::remove_back() {
 
 
 
@@ -97,7 +97,7 @@ using namespace std;
 
     }
 
-    void Linked_list_h::Add_Random(int value, int id) {
+    void Linked_list_h::insert(int value, int id) {
 
         Node* newNode = new Node(value);
         Node* current = head;
@@ -110,13 +110,13 @@ using namespace std;
         }
         else if (id == 1) {
 
-            Add_First(value);
+            insert_front(value);
             return;
 
         }
         else if (id == size) {
 
-            Add_End(value);
+            insert_back(value);
             return;
         }
 
@@ -131,7 +131,7 @@ using namespace std;
 
     }
 
-    void Linked_list_h::Remove_Random(int id) {
+    void Linked_list_h::remove(int id) {
 
         Node* behind = head;
 
@@ -154,13 +154,13 @@ using namespace std;
         }
         else if (id == 1) {
 
-            Remove_First();
+            remove_front();
             return;
 
         }
         else if (id == size) {
 
-            Remove_End();
+            remove_back();
             return;
         }
 
@@ -177,25 +177,24 @@ using namespace std;
 
     }
 
-    void Linked_list_h::Look_For(int value) {
+    int Linked_list_h::search(int value) {
 
         Node* current = head;
 
         while (current) {
 
             if (current->data == value) {
-                cout << "Znaleziono wartosc: " << current->data << endl;
 
-                return;
+                return current->data;
             }
             current = current->next;
         }
-        cout << "Brak podanego elementu" << endl;
+        return -1;
 
     }
 
 
-    void Linked_list_h::Show() {
+    void Linked_list_h::print() {
 
         Node* current = head;
 
