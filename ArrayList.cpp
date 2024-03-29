@@ -2,7 +2,7 @@
 #include "ArrayList.h"
 using namespace std;
 
-ArrayList::ArrayList() {
+ArrayList::ArrayList() { 
     size = 1;
     arr = new int[size];
     end = 0;
@@ -14,12 +14,12 @@ ArrayList::~ArrayList() {
 void ArrayList::insert_front(int data) {
     if (end == size) {
         int* temp = new int[2 * size];         // jezeli tablica jest pelna, tworzy tymczasowa dwa razy wieksza tablice
-
+                                                
         for (int i = 0; i < end; i++) {        // nastepnie wpisuje wszystkie elementy ze starej tablicy do nowej
             temp[i + 1] = arr[i];              // z indeksem przesunietym o 1 w lewo 
         }
 
-        delete[] arr;
+        delete[] arr;                          
         size *= 2;
         arr = temp;                            // kasuje stara tablice, zwieksza size razy 2, i zamienia tablice tymczasowa w domyslna
     }
@@ -29,7 +29,7 @@ void ArrayList::insert_front(int data) {
         }
     }
 
-    arr[0] = data;
+    arr[0] = data;                             
     end++;                                     // wstawia dane na poczatek tablicy i zwieksza wartosc end 
 }
 
@@ -96,7 +96,7 @@ void ArrayList::remove(int index) {
     }
 }
 
-void ArrayList::remove_end() {
+void ArrayList::remove_back() {
     if (end > 0) {
         end--;
     }
